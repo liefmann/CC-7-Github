@@ -4,14 +4,14 @@
 #                                                          #
 ############################################################
 
-# Add in your name
-# Add in purpose of this script
+# Stephanie
+# Learn how to git for a wanna be geek
 
 # Libraries ----
 
 # Functions ----
 # This is a ggplot function for a nice clean theme
-# HINT: use this theme when making your plot later on
+# HINT: use this theme when making your plot later on ggplot stadarizes the plot
 theme.clean <- function(){
   theme_bw()+
     theme(axis.text.x=element_text(size=12, angle=45, vjust=1, hjust=1),
@@ -30,10 +30,16 @@ theme.clean <- function(){
 }
 
 # Load data ----
-
+read_csv("M:/Git/git 1/temp_elevation.csv")
 # Make a plot showing how soil temperature changes with elevation ----
+(temp.el <- ggplot (temp_elevation, aes(x = Elevation.m, y = Soil.temp.mean)) +
+   geom_point(colour = "#8B4513") +
+   geom_smooth(method = lm, colour = "#8B4513", fill = "#8B4513", alpha = 0.6) +
+   labs(x = "Elevation (m)", y = "Mean soil temperature (°C)") +
+   theme.clean())
 
 # Save your plot in your project directory
 
-# Commit, pull, push!
+# Commit, pull, push! 
+read_csv("M:/Git/git 1/temp_elevation.csv")
 
